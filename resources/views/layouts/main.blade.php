@@ -35,6 +35,7 @@
 
       gtag("config", "G-GL2HYN47LJ");
     </script>
+     @vite('resources/js/app.js', 'vendor/courier/build')
   </head>
 
   <body id="section_1">
@@ -52,7 +53,7 @@
             <p class="d-flex mb-0">
               <i class="bi-envelope me-2"></i>
 
-              <a href="mailto:info@company.com"> info@gsisecurity.co.za</a>
+              <a href="mailto:info@company.com"> info@gondoskillsinstitute.co.za </a>
             </p>
           </div>
         </div>
@@ -111,25 +112,25 @@
                 aria-labelledby="navbarLightDropdownMenuLink"
               >
                 <li>
-                  <a class="dropdown-item" href="on-site-security.html"
+                  <a class="dropdown-item" href="/on-site-security.html"
                     >On-Site Security</a
                   >
                 </li>
 
                 <li>
-                  <a class="dropdown-item" href="cash-in-transit.html"
+                  <a class="dropdown-item" href="/cash-in-transit.html"
                     >Cash-In-Transit</a
                   >
                 </li>
 
                 <li>
-                  <a class="dropdown-item" href="satellite-tracking-visual.html"
+                  <a class="dropdown-item" href="/satellite-tracking-visual.html"
                     >Satellite Tracking-Visual</a
                   >
                 </li>
 
                 <li>
-                  <a class="dropdown-item" href="event-security-management.html"
+                  <a class="dropdown-item" href="/event-security-management.html"
                     >Event Security Management</a
                   >
                 </li>
@@ -137,14 +138,19 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link click-scroll" href="#section_6">Contact</a>
+              <a class="nav-link click-scroll inactive" href="/#section_6">Contact</a>
             </li>
 
             <li class="nav-item ms-3">
               <a
                 class="nav-link custom-btn custom-border-btn btn"
-                href="sign-up.html"
-                >Customer Support</a
+                href="/contact"
+                >Sign Up /</a
+              > 
+              <a
+                class="nav-link custom-btn custom-border-btn btn"
+                href="/contact"
+                >Log In</a
               >
             </li>
           </ul>
@@ -185,7 +191,7 @@
               <ul class="list-unstyled">
                 <li><a href="#" style="color: #d9d8d8 !important">Home</a></li>
                 <li>
-                  <a href="about.html" style="color: #d9d8d8 !important"
+                  <a href="/about" style="color: #d9d8d8 !important"
                     >About</a
                   >
                 </li>
@@ -195,7 +201,7 @@
                   >
                 </li>
                 <li>
-                  <a href="sign-up.html" style="color: #d9d8d8 !important"
+                  <a href="/contact" style="color: #d9d8d8 !important"
                     >Contact</a
                   >
                 </li>
@@ -225,7 +231,7 @@
                 class="site-footer-link"
                 style="color: #d9d8d8 !important"
               >
-                info@gsisecurity.co.za
+                info@gondoskillsinstitute.co.za
               </a>
             </p>
 

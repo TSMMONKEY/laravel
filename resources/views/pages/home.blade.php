@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title','Home')
+@section('title', 'Home')
 
 @section('content')
     <section class="hero-section hero-section-full-height">
@@ -113,9 +113,9 @@
                                         Provide peace of mind
                                     </li>
                                     <!-- <li class="custom-list-item d-flex">
-                        <i class="bi-check custom-text-box-icon me-2"></i>
-                        Offer excellent customer service
-                    </li> -->
+                            <i class="bi-check custom-text-box-icon me-2"></i>
+                            Offer excellent customer service
+                        </li> -->
                                 </ul>
                             </div>
                         </div>
@@ -133,8 +133,7 @@
                                 </div>
                                 <div class="counter-thumb mt-4">
                                     <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="14"
-                                            data-speed="100"></span>
+                                        <span class="counter-number" data-from="1" data-to="14" data-speed="100"></span>
                                         <span class="counter-number-text"> +</span>
                                     </div>
 
@@ -143,8 +142,7 @@
 
                                 <div class="counter-thumb">
                                     <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="2009"
-                                            data-speed="2004"></span>
+                                        <span class="counter-number" data-from="1" data-to="2009" data-speed="2004"></span>
                                         <span class="counter-number-text"></span>
                                     </div>
 
@@ -310,35 +308,81 @@
                     <h2 class="text-white mb-4">
                         Sign Up And Start with Your Training
                     </h2>
-
-                    <form class="custom-form volunteer-form mb-5 mb-lg-0" action="/" method="post" role="form">
+                    @if ($errors->any())
+                    <form class="custom-form volunteer-form mb-5 mb-lg-0" action="/" method="post"
+                        role="form">
                         @csrf
 
                         <h3 class="mb-4">Sign Up for our courses</h3>
 
                         <div class="row">
-                            <div class="col-lg-6 col-12">
-                                <input type="text" name="newsletter-name" id="volunteer-name" class="form-control"
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="first-name" id="first-name" class="form-control"
                                     placeholder="Name" required />
+                                @error('first-name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
-                            <div class="col-lg-6 col-12">
-                                <input type="text" name="newsletter-lastname" id="volunteer-subject"
-                                    class="form-control" placeholder="Last Name" required />
-                            </div>
-
-                            <div class="col-lg-12 col-12">
-                                <input type="email" name="newsletter-email" id="volunteer-email"
-                                    pattern="[^ @]*@[^ @]*" class="form-control" placeholder="example@gmail.com"
-                                    required />
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="last-name" id="last-name" class="form-control"
+                                    placeholder="Last Name" required />
                             </div>
                         </div>
+                        <label for="email">Email:</label>
+                        @foreach ($errors->all() as $error)
+                            <input type="email" name="subscribe-email" id="subscribe-email"
+                                pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required />
+                        @endforeach
+                        @error('subscribe-email')
+                            <div class="alert alert-danger">{{ $error }}</div>
+                        @enderror
 
-                        <textarea name="newsletter-message" rows="3" class="form-control" id="volunteer-message"
-                            placeholder="Comment (Optional)"></textarea>
+                        <label for="message">Message:</label>
+                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you with?"></textarea>
 
-                        <button type="submit" class="form-control">Submit</button>
+                        <button type="submit" class="form-control">
+                            Subscribe
+                        </button>
                     </form>
+                @else
+                <form class="custom-form contact-form" action="/" method="post" role="form">
+
+                    @csrf
+
+                    <h3 class="mb-4">Sign Up for our courses</h3>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <label for="firstName">First Name:</label>
+                            <input type="text" name="first-name" id="first-name" class="form-control"
+                                placeholder="Name" required />
+                            @error('first-name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" name="last-name" id="last-name" class="form-control"
+                                placeholder="Last Name" required />
+                        </div>
+                    </div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*"
+                        class="form-control" placeholder="Email Address" required />
+                    @error('subscribe-email')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                    <label for="message">Message:</label>
+                    <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you with?"></textarea>
+
+                    <button type="submit" class="form-control">
+                        Subscribe
+                    </button>
+                </form>
+            @endif
                 </div>
             </div>
         </div>
@@ -371,7 +415,7 @@
                                 <i class="bi-envelope me-2"></i>
 
                                 <a href="mailto:info@yourgmail.com">
-                                    info@gsisecurity.co.za</a>
+                                    info@gondoskillsinstitute.co.za </a>
                             </p>
 
                             <a href="#" class="custom-btn btn mt-3">Get Direction</a>
@@ -380,33 +424,96 @@
                 </div>
 
                 <div class="col-lg-5 col-12 mx-auto">
+                    @if ($errors->any())
                     <form class="custom-form contact-form" action="" method="post" role="form">
+                        <div class="col-lg-12 col-12">
+                            <h5 class="mt-1">Personal Info</h5>
+                        </div>
+
+                        @csrf
+
                         <h2>Contact form</h2>
 
                         <p class="mb-4">
                             Or, you can just send an email:
-                            <a href="#">info@gsisecurity.co.za</a>
+                            <br /><a href="#">info@gondoskillsinstitute.co.za </a>
                         </p>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
+                                <label for="firstName">First Name:</label>
                                 <input type="text" name="first-name" id="first-name" class="form-control"
                                     placeholder="Name" required />
+                                @error('first-name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12">
+                                <label for="lastName">Last Name:</label>
                                 <input type="text" name="last-name" id="last-name" class="form-control"
                                     placeholder="Last Name" required />
                             </div>
                         </div>
+                        <label for="email">Email:</label>
+                        @foreach ($errors->all() as $error)
+                            <input type="email" name="subscribe-email" id="subscribe-email"
+                                pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email Address" required />
+                        @endforeach
+                        @error('subscribe-email')
+                            <div class="alert alert-danger">{{ $error }}</div>
+                        @enderror
 
-                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                            class="form-control" placeholder="example@gmail.com" required />
+                        <label for="message">Message:</label>
+                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you with?"></textarea>
 
-                        <textarea name="message" rows="5" class="form-control" id="message"
-                            placeholder="NameWhat can we help you with?"></textarea>
-
-                        <button type="submit" class="form-control">Send Message</button>
+                        <button type="submit" class="form-control">
+                            Subscribe
+                        </button>
                     </form>
+                @else
+                    <form class="custom-form contact-form" action="/" method="post" role="form">
+                        <div class="col-lg-12 col-12">
+                            <h5 class="mt-1">Personal Info</h5>
+                        </div>
+
+                        @csrf
+
+                        <h2>Contact form</h2>
+
+                        <p class="mb-4">
+                            Or, you can just send an email:
+                            <br /><a href="#">info@gondoskillsinstitute.co.za </a>
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="first-name" id="first-name" class="form-control"
+                                    placeholder="Name" required />
+                                @error('first-name')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="last-name" id="last-name" class="form-control"
+                                    placeholder="Last Name" required />
+                            </div>
+                        </div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="subscribe-email" id="subscribe-email" pattern="[^ @]*@[^ @]*"
+                            class="form-control" placeholder="Email Address" required />
+                        @error('subscribe-email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <label for="message">Message:</label>
+                        <textarea name="message" rows="5" class="form-control" id="message" placeholder="What can we help you with?"></textarea>
+
+                        <button type="submit" class="form-control">
+                            Subscribe
+                        </button>
+                    </form>
+                @endif
                 </div>
             </div>
         </div>
