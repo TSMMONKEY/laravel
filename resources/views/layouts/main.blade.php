@@ -144,12 +144,12 @@
             <li class="nav-item ms-3">
               <a
                 class="nav-link custom-btn custom-border-btn btn"
-                href="/contact"
+                href="/register"
                 >Sign Up /</a
               > 
               <a
                 class="nav-link custom-btn custom-border-btn btn"
-                href="/contact"
+                href="/login"
                 >Log In</a
               >
             </li>

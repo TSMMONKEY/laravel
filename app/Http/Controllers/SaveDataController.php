@@ -76,6 +76,30 @@ class SaveDataController extends Controller {
         }
     }
 
+    public function storeAdmin( Request $request ) {
+        $name =  $request->input( 'first-name-admin' );
+        $lastName =  $request->input( 'last-name' );
+        $email =  $request->input( 'subscribe-email' );
+        $textArea =  $request->input( 'message' );
+
+        $user = new \App\Models\User();
+        $user->name = 'Admin';
+        $user->email = 'admin@example.com';
+        $user->password = bcrypt( 'password' );
+        // Replace 'password' with the desired password
+        $user->is_admin = true;
+        $user->save();
+
+        try {
+            $SaveData->save();
+            return redirect( '/thank-you' );
+        } catch ( QueryException $e ) {
+            if ( $e->getCode() == '23000' && strpos( $e->getMessage(), 'save_data_email_unique' ) !== false ) {
+                return redirect()->back()->withErrors( [ 'subscribe-email' => 'This email is already registered.' ] )->withInput();
+            }
+        }
+    }
+
     /**
     * Display the specified resource.
     */

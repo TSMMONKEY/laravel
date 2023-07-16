@@ -11,7 +11,7 @@
 
                     <div class="col-lg-5 col-12 mx-auto" id="Contact-Form">
                         @if ($errors->any())
-                            <form class="custom-form contact-form" action="" method="post" role="form">
+                            <form class="custom-form contact-form" action="/contact" method="post" role="form">
                                 <div class="col-lg-12 col-12">
                                     <h5 class="mt-1">Personal Info</h5>
                                 </div>
@@ -57,7 +57,7 @@
                                 </button>
                             </form>
                         @else
-                            <form class="custom-form contact-form" action="/" method="post" role="form">
+                            <form class="custom-form contact-form" action="/contact" method="post" role="form">
                                 <div class="col-lg-12 col-12">
                                     <h5 class="mt-1">Personal Info</h5>
                                 </div>

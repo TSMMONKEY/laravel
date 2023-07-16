@@ -1,4 +1,72 @@
-<x-guest-layout>
+@extends('layouts.main')
+
+@section('content')
+    <div class="card container" style="margin: 3rem auto; width:30%">
+        <div class="card-header border-bottom">
+            <h4 class="card-title" style="text-align: center">Sign-up</h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{ route('register') }}" class="forms-sample">
+
+                @csrf
+
+                {{-- Name --}}
+                <div class="form-group mt-4">
+                    <label for="name">Username</label>
+                    <input type="text" name="name" :value="old('name')" required autofocus autocomplete="name"
+                        class="form-control" id="exampleInputUsername1" placeholder="Username">
+                </div>
+
+                {{-- Email --}}
+                <div class="form-group mt-4">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="email" :value="old('email')" required autocomplete="username"
+                        class="form-control" id="email" placeholder="Email">
+                </div>
+
+                {{-- Password --}}
+                <div class="form-group mt-4">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" required autocomplete="new-password" class="form-control"
+                        id="password">
+                </div>
+
+                {{-- Password Confirm --}}
+                <div class="form-group mt-4 mb-4">
+                    <label for="exampleInputConfirmPassword1">Confirm Password</label>
+                    <input type="password" name="password_confirmation" required autocomplete="new-password"
+                        class="form-control" id="password_confirmation">
+                </div>
+
+                <button class="btn btn-outline-primary ml-4">
+                    {{ __('Register') }}
+                </button>
+                <a href="{{ route('login') }}" class="btn btn-light">Already registered?</a>
+
+                {{-- <div class="flex items-center justify-end mt-4">
+          <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+              {{ __('Already registered?') }}
+          </a>
+
+          <x-primary-button class="ml-4">
+              {{ __('Register') }}
+          </x-primary-button>
+      </div> --}}
+            </form>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+{{-- <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,4 +117,4 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
