@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
+@section('title','Register')
+
 @section('content')
-    <div class="card container" style="margin: 3rem auto; width:30%">
+    <div class="card container" style="margin: 3rem auto; width:40%">
         <div class="card-header border-bottom">
             <h4 class="card-title" style="text-align: center">Sign-up</h4>
         </div>

@@ -39,7 +39,7 @@ class SaveDataController extends Controller {
     */
 
     public function thank_you( Request $request ) {
-        return view( 'pages.thank-you' );
+        return view( 'pages/thankYou' );
     }
 
     /**

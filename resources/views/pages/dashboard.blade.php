@@ -12,11 +12,11 @@
           <div class="col-12">
             <div class="d-flex no-block align-items-center">
               <div>
-                <div class="icon"><i class="lni-display"></i></div>
-                 <p class="text-muted">New Clients</p>
+                <div class="icon"><i class="fas fa-user clients-icon"></i></div>
+                 <p class="text-muted">Clients</p>
               </div>
               <div class="ml-auto">
-                 <h2 class="counter text-primary">234</h2>
+                 <h2 class="counter text-primary">12</h2>
               </div>
             </div>
           </div>
@@ -34,11 +34,11 @@
           <div class="col-12">
             <div class="d-flex no-block align-items-center">
               <div>
-                 <div class="icon"><i class="lni-pencil-alt"></i></div>
-                 <p class="text-muted">Total Projects</p>
+                 <div class="icon"><i class="fas fa-building lighter-icon"></i></div>
+                 <p class="text-muted">Sites</p>
               </div>
               <div class="ml-auto">
-                 <h2 class="counter text-success">1,390</h2>
+                 <h2 class="counter text-success">8</h2>
               </div>
             </div>
           </div>
@@ -56,11 +56,11 @@
           <div class="col-12">
             <div class="d-flex no-block align-items-center">
               <div>
-                 <div class="icon"><i class="lni-empty-file"></i></div>
-                 <p class="text-muted">Pending Invoices</p>
+                 <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                 <p class="text-muted">Guards</p>
               </div>
               <div class="ml-auto">
-                 <h2 class="counter text-info">5,723</h2>
+                 <h2 class="counter text-info">800</h2>
               </div>
             </div>
           </div>
@@ -78,11 +78,11 @@
           <div class="col-12">
             <div class="d-flex no-block align-items-center">
               <div>
-                 <div class="icon"><i class="lni-cart"></i></div>
+                 <div class="icon"><i class="fas fa-folder"></i></div>
                  <p class="text-muted">All Projects</p>
               </div>
               <div class="ml-auto">
-                 <h2 class="counter text-purple">2,396</h2>
+                 <h2 class="counter text-purple">35</h2>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@
     <div class="col-lg-8 col-md-12 col-xs-12">
       <div class="card">
         <div class="card-header">
-          <h4 class="card-title">Best Performing Clients</h4>
+          <h4 class="card-title">All Clients</h4>
           <div class="selected float-right">
             <select class="custom-select">
               <option selected="selected" value="0">Monthly</option>
@@ -190,7 +190,7 @@
               <tr>
                 <td class="text-dark text-semibold">Company Name</td>
                 <td class="text-dark text-semibold">Product</td>
-                <td class="text-dark text-semibold">Source</td>   
+                <td class="text-dark text-semibold">Sites</td>   
                 <td class="text-dark text-semibold">Status</td>   
                 <td class="text-dark text-semibold">Billed</td>
                 <td class="text-dark text-semibold">Paid</td>
@@ -213,8 +213,8 @@
                 <td>CRM Software</td>
                 <td>Onsite</td>
                 <td><a href="#" class="badge badge-danger">Processing</a></td>
-                <td>$423.00</td>
-                <td>$168.00</td>
+                <td>R423.00</td>
+                <td>R168.00</td>
               </tr>
               <tr>
                 <td>
@@ -232,8 +232,8 @@
                 <td>GIS Software</td>
                 <td>Marketplace</td>
                 <td><a href="#" class="badge badge-success">Done</a></td>
-                <td>$665.67</td>
-                <td>$665.67</td>
+                <td>R665.67</td>
+                <td>R665.67</td>
               </tr>
               <tr>
                 <td>
@@ -251,8 +251,8 @@
                 <td>Accounting Software</td>
                 <td>Others</td>
                 <td><a href="#" class="badge badge-info">On-hold</a></td>
-                <td>$576.00</td>
-                <td>$476.00</td>
+                <td>R576.00</td>
+                <td>R476.00</td>
               </tr>
               <tr>
                 <td>
@@ -270,8 +270,8 @@
                 <td>Sales Dashboard</td>
                 <td>Marketplace</td>
                 <td><a href="#" class="badge badge-success">Done</a></td>
-                <td>$234.00</td>
-                <td>$234.00</td>
+                <td>R234.00</td>
+                <td>R234.00</td>
               </tr>
             </tbody>
           </table>
@@ -281,19 +281,19 @@
     <div class="col-lg-4 col-md-12 col-xs-12">
       <div class="card">
         <div class="card-body text-center">
-          <h4 class="header-title">Earning Sources</h4>
+          <h4 class="header-title">All Post Incidents</h4>
           <ul class="list-inline widget-chart m-t-20 text-center">
             <li>
-              <h4 class=""><b>3654</b></h4>
-              <p class="text-muted m-b-0">Marketplace</p>
+              <h4 class=""><b>5</b></h4>
+              <p class="text-muted m-b-0">Theft</p>
             </li>
             <li>
-              <h4 class=""><b>954</b></h4>
-              <p class="text-muted m-b-0">On Site</p>
+              <h4 class=""><b>60</b></h4>
+              <p class="text-muted m-b-0">Threats</p>
             </li>
             <li>
-              <h4 class=""><b>262</b></h4>
-              <p class="text-muted m-b-0">Others</p>
+              <h4 class=""><b>0</b></h4>
+              <p class="text-muted m-b-0">Break-ins</p>
             </li>
           </ul>
           <div id="morris-donut-example" style="height: 240px"></div>

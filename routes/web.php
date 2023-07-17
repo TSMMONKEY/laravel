@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaveDataController;
+use App\Http\Controllers\ClientsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,18 +31,18 @@ Route::get('/contact', function () {
     return view('pages.contact');
 });
 
-Route::get('/thank-you', function () {
-    return view('pages.thank-you');
-});
-
 Route::post('/contact', [SaveDataController::class,'store']);
 
-// Route::get('/thank-you', [SaveDataController::class,'thank_you']);
+Route::get('/thank-you', [SaveDataController::class,'thank_you']);
 
-Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
-    Route::get('/contact', [SaveDataController::class,'pages.contact']);
-});
+// Route::group(['middleware' => ['auth', 'can:isAdmin']], function () {
+//     Route::get('/contact', [SaveDataController::class,'pages.contact']);
 
+// });
+
+Route::get('/add-client', [ClientsController::class,'add_client']);
+
+Route::get('/add-client', [ClientsController::class, 'add_client'])->middleware('isAdmin');
 
 Route::get('/dashboard', function () {
     return view('pages.dashboard');

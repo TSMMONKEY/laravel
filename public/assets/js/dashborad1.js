@@ -51,9 +51,9 @@ File: dashborad1 js
 
             //creating donut chart for dashboard-1
             var $donutData = [
-                {label: "Marketplace", value: 55},
-                {label: "On-site", value: 30},
-                {label: "Others", value: 15},
+                {label: "Theft", value: 5},
+                {label: "Threats", value: 60},
+                {label: "Break-ins", value: 0},
             ];
             this.createDonutChart('morris-donut-example', $donutData, ['#e22a6f', "#24d5d8", '#ab8ce4']);
 
