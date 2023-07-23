@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Providers;
-use Illuminate\Support\Facades\Gate;
 
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -20,12 +19,8 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * Register any authentication / authorization services.
      */
-    public function boot()
+    public function boot(): void
     {
-        $this->registerPolicies();
-
-        Gate::define('isAdmin', function ($user) {
-            return $user->role === 'admin'; // Assuming 'role' is the column in your users table representing the role.
-        });
+        //
     }
 }

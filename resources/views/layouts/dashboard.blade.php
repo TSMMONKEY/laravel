@@ -7,15 +7,26 @@
     <title>@yield('title')</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+    <!-- font-awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- datepicker styles -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+
     <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/line-icons.css">
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+    <link rel="stylesheet" href="/assets/plugins/morris/morris.css">
     <!-- Main Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
     <!-- Responsive Style -->
-    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
     <!-- Other meta tags and stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -280,14 +291,6 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="/add-client">
-                                <span class="icon-holder">
-                                    <i class="lni-write"></i>
-                                </span>
-                                <span class="title">Post A Client</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="#">
                                 <span class="icon-holder">
                                     <i class="lni-timer"></i>
@@ -304,11 +307,29 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="/todo">
+                                <span class="icon-holder">
+                                    <i class="lni-agenda"></i>
+                                </span>
+                                <span class="title">To Do List</span>
+                                <span class="arrow">
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
                             <a class="dropdown-toggle" href="#">
                                 <span class="icon-holder">
                                     <i class="lni-target"></i>
                                 </span>
                                 <span class="title">Body Cams</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" href="/add-client">
+                                <span class="icon-holder">
+                                    <i class="lni-write"></i>
+                                </span>
+                                <span class="title">Post A Client</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
@@ -387,16 +408,19 @@
     <!-- End Preloader -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="assets/js/jquery-min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.app.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/jquery-min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/jquery.app.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+    <!-- Datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <!--Morris Chart-->
-    <script src="assets/plugins/morris/morris.min.js"></script>
-    <script src="assets/plugins/raphael/raphael-min.js"></script>
-    <script src="assets/js/dashborad1.js"></script>
+    <script src="/assets/plugins/morris/morris.min.js"></script>
+    <script src="/assets/plugins/raphael/raphael-min.js"></script>
+    <script src="/assets/js/dashborad1.js"></script>
 
 </body>
 

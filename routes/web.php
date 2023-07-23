@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaveDataController;
 use App\Http\Controllers\ClientsController;
+use App\Http\Controllers\TasksController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,13 +44,23 @@ Route::get('/thank-you', [SaveDataController::class,'thank_you']);
 
 Route::get('/add-client', [ClientsController::class,'add_client']);
 
-Route::get('/add-client', [ClientsController::class, 'add_client'])->middleware('isAdmin');
-
 Route::get('/dashboard', function () {
-    return view('pages.dashboard');
+    $clients = DB::table('clients')->get();
+    
+    return view('pages.dashboard',[
+        "clients" => $clients
+    ]);
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Auth Routes
 Route::middleware('auth')->group(function () {
+    Route::post('/add-client', [ClientsController::class, 'store']);
+    Route::get('/add-client', [ClientsController::class, 'add_client']);
+    Route::get('/todo', [TasksController::class,'to_do']);
+    Route::post('/todo', [TasksController::class, 'store']);
+
+    // Profile Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

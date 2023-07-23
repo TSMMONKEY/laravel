@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Clients;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class ClientsController extends Controller
 {
@@ -12,12 +13,9 @@ class ClientsController extends Controller
      */
     public function add_client()
     {
-        if (!auth()->user()->can('isAdmin')) {
-            abort(403, 'Unauthorized action.');
-        }
-        
-        return view('pages.add-client');
+        return view("pages.add-client");
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -32,7 +30,22 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $clients = new Clients;
+        $clients->company_name = $request->input('company_name');
+        $clients->service = $request->input('services');
+        $clients->sites = $request->input('sites');
+        $clients->status = $request->input('status');
+        $clients->billed = $request->input('billed');
+        $clients->paid = $request->input('paid');
+        $clients->address1 = $request->input('address1');
+        $clients->address2 = $request->input('address2');
+        $clients->postalCode = $request->input('postcode');
+        $clients->state = $request->input('state');
+        $clients->city = $request->input('city');
+        $clients->phoneNumber = $request->input('phoneNumber');
+
+        $clients->save();
+        return redirect('/');
     }
 
     /**

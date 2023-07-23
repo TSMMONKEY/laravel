@@ -19,6 +19,12 @@ return new class extends Migration
             $table->string('status', 800);
             $table->string('billed', 800);
             $table->string('paid', 800);
+            $table->string('address1', 800);
+            $table->string('address2', 800);
+            $table->string('postalCode', 800);
+            $table->string('state', 800);
+            $table->string('city', 800);
+            $table->string('phoneNumber', 800);
             $table->timestamps();
         });
     }

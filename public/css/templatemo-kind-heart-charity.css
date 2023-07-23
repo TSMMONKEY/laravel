@@ -387,7 +387,7 @@ strong {
   padding-bottom: 15px;
 }
 
-.nav-item .custom-btn{
+.nav-item .custom-btn {
   border: none;
   text-decoration: underline;
 }
@@ -453,12 +453,21 @@ strong {
     display: block;
     margin-top: 0;
   }
+  #navbarLightDropdownMenuLink:active {
+    /* display: inline-block;
+    color: var(--p-bg-color);
+    font-size: var(--menu-font-size);
+    font-weight: var(--font-weight-medium);
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px; */
+  }
 }
 @media screen and (max-width: 992px) {
   #widget-section {
     width: 100% !important;
   }
-  #More-Section-Info{
+  #More-Section-Info {
     width: 100% !important;
   }
 }
@@ -830,10 +839,10 @@ strong {
   width: 150px;
   margin-right: 20px;
 }
-.news-block-two-col-info h6{
+.news-block-two-col-info h6 {
   font-size: 15px;
 }
-.news-block-two-col-info p{
+.news-block-two-col-info p {
   font-size: 10px;
 }
 .news-block-two-col-image-wrap-about {
@@ -1318,22 +1327,22 @@ blockquote::before {
 .donate-form .form-control {
   margin-bottom: 0;
 }
- #Contact-Form{
+#Contact-Form {
   width: 100%;
 }
- #Contact-Form .form-control{
+#Contact-Form .form-control {
   width: 100%;
-    margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
-#First-Contact-Form{
+#First-Contact-Form {
   width: 100%;
   background-color: #f1f8ff;
   padding: 30px;
-    margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
-#First-Contact-Form input{
+#First-Contact-Form input {
   background-color: #fff;
-    margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
 
 /*---------------------------------------
@@ -1381,7 +1390,6 @@ blockquote::before {
 .site-footer-title {
   color: #fff;
   font-weight: 700;
-
 }
 
 /*---------------------------------------
@@ -1522,7 +1530,7 @@ blockquote::before {
     position: relative;
     margin-top: 5px;
     margin-bottom: 20px;
-    left: 20px;
+    left: 35%;
   }
 
   .site-header .social-icon {

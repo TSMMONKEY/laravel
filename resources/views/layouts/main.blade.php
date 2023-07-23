@@ -83,7 +83,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link click-scroll dropdown-toggle" href="#seCITon_5"
+                        <a class=".navbar-nav nav-link click-scroll dropdown-toggle" href="#seCITon_5"
                             id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">Services</a>
 

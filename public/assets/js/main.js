@@ -8,10 +8,10 @@
     ========================================================*/
     $('#preloader').fadeOut();
 
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
 
-	$('[data-toggle="popover"]').popover()
-  
+	$('[data-toggle="popover"]').popover();
   });      
 
 }(jQuery));
+  
