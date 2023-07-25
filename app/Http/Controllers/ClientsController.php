@@ -43,6 +43,7 @@ class ClientsController extends Controller {
 
     public function store( Request $request ) {
         $clients = new Clients;
+        $clients->user_id = auth()->user()->id;
         $clients->company_name = $request->input( 'company_name' );
         $clients->service = $request->input( 'services' );
         $clients->sites = $request->input( 'sites' );
