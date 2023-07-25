@@ -55,8 +55,14 @@ Route::get('/dashboard', function () {
 
 // Auth Routes
 Route::middleware('auth')->group(function () {
+
+    Route::get('/client/edit/{name}/{id}', [ClientsController::class, 'edit']);
+    Route::put('/client/update/{name}/{id}', [ClientsController::class, 'update'])->name('update');
+    Route::delete('/client/delete/{name}/{id}', [ClientsController::class, 'destroy'])->name('destroy');
+
     Route::post('/add-client', [ClientsController::class, 'store']);
     Route::get('/add-client', [ClientsController::class, 'add_client']);
+    Route::get('/clients', [ClientsController::class, 'client']);
     Route::get('/todo', [TasksController::class,'to_do']);
     Route::post('/todo', [TasksController::class, 'store']);
 

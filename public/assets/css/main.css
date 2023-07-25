@@ -2853,3 +2853,8 @@ button:focus {
     position: relative;
   }
 
+
+  /* pagination */
+  .pagination{
+    justify-content: center;
+  }

@@ -32,6 +32,16 @@
             </div>
         </div>
     @endif
+    @if (session()->has('updateSuccess'))
+        <div class="alert-box">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <strong>{{session('updateSuccess')}}</strong> was successfully updated
+            </div>
+        </div>
+    @endif
     <div class="container-fluid">
         <!-- Title Count Start -->
         <div class="card-group">

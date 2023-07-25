@@ -283,7 +283,7 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="#">
+                            <a class="dropdown-toggle" href="/clients">
                                 <span class="icon-holder">
                                     <i class="lni-user"></i>
                                 </span>
@@ -364,12 +364,12 @@
                         <!-- Breadcrumb Start -->
                         <div class="breadcrumb-wrapper row">
                             <div class="col-12 col-lg-3 col-md-6">
-                                <h4 class="page-title">Dashboard</h4>
+                                <h4 class="page-title" style="text-transform: capitalize">{{basename(parse_url(url()->current(), PHP_URL_PATH));}}</h4>
                             </div>
                             <div class="col-12 col-lg-9 col-md-6">
                                 <ol class="breadcrumb float-right">
                                     <li><a href="index.html">Home</a></li>
-                                    <li class="active">/ Dashboard</li>
+                                    <li class="active">/ {{basename(parse_url(url()->current(), PHP_URL_PATH));}}</li>
                                 </ol>
                             </div>
                         </div>

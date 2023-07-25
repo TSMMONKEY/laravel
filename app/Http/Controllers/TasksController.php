@@ -64,9 +64,7 @@ class TasksController extends Controller
      */
     public function edit(Tasks $tasks)
     {
-        $task = tasks::where([
-            'id'=> '1'
-            ])->first();
+        // 
     }
 
     /**

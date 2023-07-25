@@ -3,160 +3,113 @@
 @section('title', 'Add New Client')
 
 @section('content')
-    <div class="col-12 grid-margin">
-        <div class="card">
-            <div class="card-header border-bottom">
-                <h4 class="card-title">Enter Client Details</h4>
+    <div class="row">
+        @foreach ($allClients as $client)
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header border-bottom">
+                        <h4 class="card-title">{{ $client->company_name }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne" style="">
+                                    <h5 class="m-0">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne1"
+                                            aria-expanded="false" aria-controls="collapseOne" class="text-dark collapsed"
+                                            style="display: flex; justify-content: space-between;">
+                                            <span>{{ $client->company_name }}</span>
+                                            <i class="lni-angle-double-down"></i>
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne1" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                        aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                        ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                        accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h5 class="m-0">
+                                        <a class="collapsed text-dark" data-toggle="collapse" data-parent="#accordion"
+                                            href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo">
+                                            Collapsible Group Item #2
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                        aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                        ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                        accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h5 class="m-0">
+                                        <a class="collapsed text-dark" data-toggle="collapse" data-parent="#accordion"
+                                            href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree">
+                                            Collapsible Group Item #3
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapseThree3" class="collapse" aria-labelledby="headingThree3"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                        richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                        brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                        aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                        ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                        accusamus labore sustainable VHS.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="m-3">
+                        <a class="btn btn-light m-b-10" href="/client/edit/{{ $client->company_name }}/{{ $client->id }}">
+                            Edit Client
+                        </a>
+                        <button class="btn btn-common m-b-10" type="button" data-toggle="collapse"
+                            data-target="#collapseExample" aria-expanded="false"
+                            aria-controls="collapseExample">Delete</button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <form class="card card-body"
+                            action="{{ route('destroy', ['name' => $client->company_name, 'id' => $client->id]) }}"
+                            method="post">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-light m-b-10" type="submit">
+                                Are you sure you want to delete <strong>{{ $client->company_name }}</strong>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <form class="form-sample" method="POST" action="">
-
-                  @csrf
-
-                    <p class="card-description">
-                        Personal info
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Company Name</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="company_name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Billed Amount(zar)</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" placeholder="15000" type="number" name="billed">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Service</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control" name="services">
-                                        <option value="on-site-security">On-Site Security</option>
-                                        <option value="cash-in-transit">Cash-In-Transit</option>
-                                        <option value="satelite-tracking-visual">Satelite-Tracking-visual</option>
-                                        <option value="event-security-service">Event-Security-Services</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3">Membership</label>
-                                <div class="col-sm-3">
-                                    <div class="custom-control custom-radio radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="status" id="male"
-                                            value="done">
-                                        <label class="custom-control-label" for="Done" value="Done">Done</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="custom-control custom-radio radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="status" id="male"
-                                            value="onhold">
-                                        <label class="custom-control-label" for="Hold">On-Hold</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="custom-control custom-radio radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" name="status" id="gender"
-                                            value="Proccessing">
-                                        <label class="custom-control-label" for="gender">Professional</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Sites</label>
-                                <div class="col-sm-9">
-                                    <select class="form-control" name="sites">
-                                        <option value="onsite">Onsite</option>
-                                        <option value="tracking">Tracking</option>
-                                        <option value="CIT">CIT</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Paid Amount(zar)</label>
-                                <div class="col-sm-9">
-                                    <input class="form-control" placeholder="15000" type="number" name="paid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="card-description">
-                        Address
-                    </p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Address 1</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="address1">
-                                </div> 
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">State</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="state">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Address 2</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="address2">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Postcode</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="postcode">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">City</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="city">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Phone Number</label>
-                                <div class="col-sm-9">
-                                  <input type="number" class="form-control" name="phoneNumber">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-common mr-3">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
-                </form>
+        @endforeach
+        <div class="col-lg-12">
+            <div class="card">
+                {{$allClients->links()}}
             </div>
         </div>
     </div>
