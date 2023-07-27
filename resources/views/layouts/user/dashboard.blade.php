@@ -212,8 +212,8 @@
                                                 <img src="assets/img/avatar/avatar.jpg" alt="">
                                             </div>
                                             <div class="info">
-                                                <span class="title text-semibold">Tomas Murray</span>
-                                                <span class="sub-title">UI/UX Desinger</span>
+                                                <span class="title text-semibold">@yield('userName')</span>
+                                                <span class="sub-title">@yield('userEmail')</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -283,19 +283,19 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="/clients">
+                            <a class="dropdown-toggle" href="/client/billing/{name}/{id}">
                                 <span class="icon-holder">
                                     <i class="lni-user"></i>
                                 </span>
-                                <span class="title">Clients</span>
+                                <span class="title">Billing</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="#">
+                            <a class="dropdown-toggle" href="/courses/">
                                 <span class="icon-holder">
                                     <i class="lni-timer"></i>
                                 </span>
-                                <span class="title">Projects</span>
+                                <span class="title">Courses</span>
                             </a>
                         </li>
                         <li class="nav-item dropdown">
@@ -311,7 +311,7 @@
                                 <span class="icon-holder">
                                     <i class="lni-agenda"></i>
                                 </span>
-                                <span class="title">To Do List</span>
+                                <span class="title">Events</span>
                                 <span class="arrow">
                                 </span>
                             </a>
@@ -329,27 +329,8 @@
                                 <span class="icon-holder">
                                     <i class="lni-write"></i>
                                 </span>
-                                <span class="title">Post A Client</span>
+                                <span class="title">Support</span>
                             </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" href="#">
-                                <span class="icon-holder">
-                                    <i class="lni-control-panel"></i>
-                                </span>
-                                <span class="title">Reports</span>
-                                <span class="arrow">
-                                    <i class="lni-chevron-right"></i>
-                                </span>
-                            </a>
-                            <ul class="dropdown-menu sub-down">
-                                <li>
-                                    <a href="basic-table.html">Customer Report</a>
-                                </li>
-                                <li>
-                                    <a href=#"data-table.html">Gondo Reports</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </div>

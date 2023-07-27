@@ -1,6 +1,9 @@
-@extends('layouts.dashboard')
+@extends('layouts.user.dashboard')
 
 @section('title', 'Home')
+
+@section('userName', $userDetails->name)
+@section('userEmail', $userDetails->email)
 
 @section('content')
     @if (session()->has('success'))
@@ -221,7 +224,7 @@
             <div class="col-lg-12 col-md-12 col-xs-12 allClients" style="text-transform: capitalize">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">All Clients</h4>
+                        <h4 class="card-title">All Courses</h4>
                         <div class="selected float-right">
                             <select class="custom-select">
                                 <option selected="selected" value="0">Monthly</option>
@@ -235,9 +238,9 @@
                         <table class="table table-lg">
                             <thead>
                                 <tr>
-                                    <td class="text-dark text-semibold">Company Name</td>
-                                    <td class="text-dark text-semibold">Product</td>
-                                    <td class="text-dark text-semibold">Sites</td>
+                                    <td class="text-dark text-semibold">Course Name</td>
+                                    <td class="text-dark text-semibold">Price</td>
+                                    <td class="text-dark text-semibold">Part-Time</td>
                                     <td class="text-dark text-semibold">Status</td>
                                     <td class="text-dark text-semibold">Billed</td>
                                     <td class="text-dark text-semibold">Paid</td>
@@ -299,7 +302,7 @@
             <div class="col-lg-4 col-md-6 col-xs-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">To Do Task List</h4>
+                        <h4 class="card-title">My Courses</h4>
                         <div class="card-toolbar">
                             <ul>
                                 <li>
@@ -368,7 +371,7 @@
                 <div class="follow">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">New Clients</h4>
+                            <h4 class="card-title">Course Tutors</h4>
                             <div class="card-toolbar">
                                 <ul>
                                     <li>
